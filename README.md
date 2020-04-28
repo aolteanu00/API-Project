@@ -6,4 +6,11 @@
   * the number of wildfires during the selected month and year in each state
   * the average temperature in all states during the selected month and year
   * the number of factories using combustion energy during the selected month and year in each state
-- For the Pie chart
+- For the Pie chart:
+  * it will first show the percentage of states with wildfires during the selected month and year
+  * then it will show the percentage of those states with wildfires that had an average temperature above 80
+  * then it will show the percentage of those states with wildfires that had factories using combustion energy
+
+Factories Dataset: https://data.world/us-doe-gov/19c607fa-1687-4bc4-a6dd-74b88b849644
+Wildfire Dataset: https://www.ncdc.noaa.gov/societal-impacts/wildfires/
+Temperature Dataset: https://www.ncdc.noaa.gov/cag/global/time-series
