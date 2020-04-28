@@ -11,6 +11,6 @@
   * then it will show the percentage of those states with wildfires that had an average temperature above 80
   * then it will show the percentage of those states with wildfires that had factories using combustion energy
 
-Factories Dataset: https://data.world/us-doe-gov/19c607fa-1687-4bc4-a6dd-74b88b849644
-Wildfire Dataset: https://www.ncdc.noaa.gov/societal-impacts/wildfires/
+Factories Dataset: https://data.world/us-doe-gov/19c607fa-1687-4bc4-a6dd-74b88b849644 <br />
+Wildfire Dataset: https://www.ncdc.noaa.gov/societal-impacts/wildfires/ <br />
 Temperature Dataset: https://www.ncdc.noaa.gov/cag/global/time-series
