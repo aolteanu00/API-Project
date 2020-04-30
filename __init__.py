@@ -4,9 +4,6 @@
 from flask import Flask, request, redirect, session, render_template, url_for, flash
 import os
 
- Flask,render_template
-app = Flask(__name__)
-
 app = Flask(__name__)
 
 app.secret_key = os.urandom(32)
