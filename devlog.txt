@@ -1,3 +1,0 @@
-April 28, 2020
-- ohC: updated README.md
-- chowdhuryB: pushed designdoc

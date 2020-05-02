@@ -1,0 +1,5 @@
+April 28, 2020
+- ohC: updated README.md
+- chowdhuryB: pushed designdoc
+May 1st, 2020
+18:48 -- chowdhuryB: added basic templates, set up js folder/files, added US extreme tempuratues csv from https://www.climate.gov/maps-data/datasets/formats/csv. Started on extracting data and creating graph.
