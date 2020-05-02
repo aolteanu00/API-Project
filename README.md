@@ -17,4 +17,5 @@
 
 Factories Dataset: https://data.world/us-doe-gov/19c607fa-1687-4bc4-a6dd-74b88b849644 <br />
 Wildfire Dataset: https://www.ncdc.noaa.gov/societal-impacts/wildfires/ <br />
-Temperature Dataset: https://www.ncdc.noaa.gov/cag/global/time-series
+Temperature Dataset: https://www.ncdc.noaa.gov/cag/global/time-series <br />
+Extreme Tempuratures: https://www.ncdc.noaa.gov/extremes/cei/graph/us/01-12/1/data.csv
