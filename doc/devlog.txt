@@ -4,4 +4,5 @@ April 28, 2020
 May 1st, 2020
 18:48 -- chowdhuryB: added basic templates, set up js folder/files, added US extreme tempuratues csv from https://www.climate.gov/maps-data/datasets/formats/csv. Started on extracting data and creating graph.
 23:21 --chowdhuryB :worked on some d3, kinda figured out the promise object.
-
+May 5th, 2020
+18:14 -- chowdhuryB: got a static bar chart working(progress though)!
