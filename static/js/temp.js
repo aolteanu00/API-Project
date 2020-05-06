@@ -1,15 +1,21 @@
 console.log("wassup");
-var wokr = document.getElementById("work");
-wokr.innerHTMl = "huh";
-let margin = {"top":10,"left":10,"right":10,"bottom":10};
+
+let margin = {"top":10,"left":20,"right":10,"bottom":10};
 let width = 800;
 let height = 400;
+
+let headline = d3.select("#headline")
+    .style("text-align","center")
+    .html("US Tempurature Extremes")
+
+let divcenter = d3.select("#chart")
+    .style("text-align","center")
 
 let chart = d3.select("#chart").append("svg")
     .attr("width", width+margin.left + margin.right)
     .attr("height",height+margin.top + margin.bottom)
     //.append("g").attr("class", "container")
-    //.attr("transform", "translate("+ margin.left +","+ margin.top +")");
+    .attr("transform", "translate("+ margin.left +","+ margin.top +")");
 
 var x = d3.scaleBand()
     .range([0, width-20])
