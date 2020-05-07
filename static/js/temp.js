@@ -1,7 +1,7 @@
 console.log("wassup");
 
-let margin = {"top":10,"left":20,"right":10,"bottom":10};
-let width = 800;
+let margin = {"top":10,"left":20,"right":10,"bottom":30};
+let width = 1000;
 let height = 400;
 
 let headline = d3.select("#headline")
@@ -14,7 +14,7 @@ let divcenter = d3.select("#chart")
 let chart = d3.select("#chart").append("svg")
     .attr("width", width+margin.left + margin.right)
     .attr("height",height+margin.top + margin.bottom)
-    //.append("g").attr("class", "container")
+    .append("g").attr("class", "container")
     .attr("transform", "translate("+ margin.left +","+ margin.top +")");
 
 var x = d3.scaleBand()
@@ -44,10 +44,19 @@ let fixData = function(data){
  
 let extremes = d3.csv("/static/data/tempExtremes.csv");
 extremes.then(function(csv){
-    const data = fixData(csv);
+    const data = fixData(csv).slice(0,50);
     console.log(data);
     x.domain(data.map(d => d["Date"]))
     y.domain([0,d3.max(data.map(d=> d["Much Below Normal"]))])
+    
+    chart.append("g")
+	.attr("class", "yaxis")
+	.call(yAxis)
+    chart.append("g")
+	.attr("transform","translate(0,400)")
+	.attr("class", "yaxis")
+	.call(xAxis)
+
     chart.selectAll(".bar")
 	.data(data)
 	.enter()

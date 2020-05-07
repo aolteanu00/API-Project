@@ -10,7 +10,7 @@ app.secret_key = os.urandom(32)
 
 @app.route("/")
 def hello_world():
-    return render_template("base.html")
+    return render_template("homepage.html")
 
 @app.route("/another")
 def another():
