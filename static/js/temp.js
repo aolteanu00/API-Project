@@ -35,7 +35,7 @@ let fixData = function(data){
     return fixed;
 }
 
- 
+
 let extremes = d3.csv("/static/data/tempExtremes.csv");
 extremes.then(function(csv){
     const data = fixData(csv);
