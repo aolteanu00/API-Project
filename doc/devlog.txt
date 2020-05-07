@@ -6,3 +6,7 @@ May 1st, 2020
 23:21 --chowdhuryB :worked on some d3, kinda figured out the promise object.
 May 5th, 2020
 18:14 -- chowdhuryB: got a static bar chart working(progress though)!
+May 7th, 2020
+00:34 -- chowdhuryB: labels on chart, created homepage, working on transitions and animations.
+
+02:34 -- chowdhuryB: got more data involved in that one chart, started working on animating a line drawing a path on that one chart.
