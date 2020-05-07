@@ -6,6 +6,10 @@ May 1st, 2020
 23:21 --chowdhuryB :worked on some d3, kinda figured out the promise object.
 May 5th, 2020
 18:14 -- chowdhuryB: got a static bar chart working(progress though)!
+22:40 -- ohC: found a video tutorial for topojson and will use it as basis for map
+May 6th, 2020
+23:31 -- ohC: got it so the map is on the verge of displaying: working on how to translate
+	us.json file using d3v5 as the methods learned from a video is using d3v4
 May 7th, 2020
 00:34 -- chowdhuryB: labels on chart, created homepage, working on transitions and animations.
 
