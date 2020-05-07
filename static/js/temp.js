@@ -52,6 +52,15 @@ var yAxis = d3.axisLeft(y);
 
 var yAxis1 = d3.axisLeft(y1);
 
+let tooltip = d3.select("body")
+    .append("div")
+    .attr("id","tooltip")
+    .style("position","absolute")
+    .style("font-family","Open-Sans', sans-serif")
+    .style("font-size","12px")
+    .style("z-index","10px")
+    .style("visibility","hidden")
+    .style("background-color","black")
 
 let fixData = function(data){
     let fixed  = data.map(point=> {
@@ -95,6 +104,29 @@ extremes.then(function(csv){
 	.attr("width",x.bandwidth())
 	.attr("y",d => y(d["Much Above Normal"]))
         .attr("height", d => (height - y(d["Much Above Normal"])))
+	.on("mouseover",function(d){
+	    d3.select("#tooltip")
+		.style("visibility","visible")
+		.html(d["Date"] + ":" + d["Much Above Normal"])
+	    	.style("color","#3affeb")
+	    return
+	})
+
+	.on("mousemove",function(d){
+	    d3.select("#tooltip")
+	    	.style("visibility","visible")
+		.style("top",(event.pageY-10) + "px")
+		.style("left",(event.pageX+10) + "px")
+		.text(d["Date"] + " : " + d["Much Above Normal"] +"% Below Normal" )
+	    return
+	})
+	 
+	.on("mouseout",function(d){
+	    d3.select("#tooltip")
+		.style("visibility","hidden")
+	    return
+	})
+    
 
     chart1.append("g")
 	.attr("class", "yaxis1")
@@ -116,6 +148,32 @@ extremes.then(function(csv){
 	.attr("width",x1.bandwidth())
 	.attr("y",0)
         .attr("height", d => (y1(d["Much Below Normal"])))
+    	.on("mouseover",function(d){
+	    d3.select("#tooltip")
+		.style("visibility","visible")
+		.text(d["Date"] + " : " + d["Much Above Normal"] +"% Above Normal")
+		.style("color","#ff3a3a")
+
+
+	   
+	    return
+	})
+
+	.on("mousemove",function(d){
+	    d3.select("#tooltip")
+	    	.style("visibility","visible")
+		.style("top",(event.pageY+10) + "px")
+		.style("left",(event.pageX+10) + "px")
+		.text(d["Date"] + ":" + d["Much Below Normal"])
+	    return
+	})
+	 
+	.on("mouseout",function(d){
+	    d3.select("#tooltip")
+		.style("visibility","hidden")
+	    return
+	})
+
 
     
 })
