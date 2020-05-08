@@ -14,12 +14,10 @@
   /*
   reading in the us.json
   */
-  var file = ["static/json/us.json"]
-
-  Promise.all(file.map(url => d3.json(url))).then(function(values) {
-    //console.log(values)
-    ready(d3.json, values)
-  })
+  d3.queue()
+    .defer(d3.json, "static/json/us.json")
+    .defer(d3.csv, "static/wildfire.csv")
+    .await(ready)
 
 
   /*
@@ -27,9 +25,9 @@
   center it (translate)
   zoom in (scale)
   */
-  var projection = d3.geoMercator()
+  var projection = d3.geoAlbersUsa()
     .translate([ width / 2, height / 2])
-    .scale(100)
+    .scale(850)
   /*
   create a path (geoPath)
   and set its projection
@@ -37,7 +35,7 @@
   var path = d3.geoPath()
     .projection(projection)
 
-  function ready (error, data) {
+  function ready (error, data, wildfires) {
     console.log(data)
     /*
     topojson.feature converts
@@ -62,7 +60,14 @@
     add the wildfires
     get the x/y from the lat/long + projection
     */
-
-
+    console.log(wildfires)
+    svg.selectAll(".wildfire")
+      .data(wildfires)
+      .enter().append("circle")
+      .attr("class", "wildfire")
+      .attr("r", 2)
+      .attr("text-anchor", "end")
+      .attr("stroke", "black")
+      .
   }
 })();
