@@ -12,9 +12,14 @@ app.secret_key = os.urandom(32)
 def hello_world():
     return render_template("homepage.html")
 
-@app.route("/another")
-def another():
-    return render_template("temp.html")
+@app.route("/extremesData")
+def extremes():
+    return render_template("tempExtremes.html")
+
+@app.route("/globalTemp")
+def globalTempAnomaly():
+    return render_template("globalTemp.html")
+
 
 if __name__ == "__main__":
     app.debug = True
