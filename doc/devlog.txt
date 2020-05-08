@@ -15,3 +15,5 @@ May 7th, 2020
 02:34 -- chowdhuryB: got more data involved in that one chart, started working on animating a line drawing a path on that one chart.
 
 14:34 -- chowdhuryB: got colors on that one graph, added a tooltip to help the reader understand what exactly is going on, started animation stuff.
+
+22:17 -- ohC: got the map working and will be displaying the data soon
