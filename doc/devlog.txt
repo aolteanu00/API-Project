@@ -17,3 +17,6 @@ May 7th, 2020
 14:34 -- chowdhuryB: got colors on that one graph, added a tooltip to help the reader understand what exactly is going on, started animation stuff.
 
 22:17 -- ohC: got the map working and will be displaying the data soon
+
+May 8th 2020
+14:52 -- chowdhuryB: got line animation working, starting on displaying tempurature anomaly data.
