@@ -16,7 +16,7 @@
   * then it will show the percentage of those states with wildfires that had factories using combustion energy
 
 Factories Dataset: https://data.world/us-doe-gov/19c607fa-1687-4bc4-a6dd-74b88b849644 <br />
-Wildfire Dataset: https://www.ncdc.noaa.gov/societal-impacts/wildfires/ <br />
+Wildfire Dataset: https://firms.modaps.eosdis.nasa.gov/download <br />
 Temperature Dataset: https://www.ncdc.noaa.gov/cag/global/time-series <br />
 Extreme Tempuratures: https://www.ncdc.noaa.gov/extremes/cei/graph/us/01-12/1/data.csv <br />
 Approximated Historial Tempurature Data: https://www.climatelevels.org/files/nhtemp-moberg2005.txt
