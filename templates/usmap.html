@@ -1,27 +1,64 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <style>
-    *{
-      font-family: "Helvetica Neue";
-    }
-    p {
-      font-size: 0.85em;
-    }
 
-    .state {
-      fill: #e3e3e3;
-      stroke: #333;
-      stroke-width: 0.5;
-    }
-    </style>
-    <title>MAP</title>
-  </head>
-  <body>
+{% block heading %}
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <style>
+  *{
+    font-family: "Helvetica Neue";
+  }
+  p {
+    font-size: 0.85em;
+  }
+
+  .state {
+    fill: #e3e3e3;
+    stroke: #333;
+    stroke-width: 0.5;
+  }
+
+  .selected {
+    fill: yellow;
+  }
+  </style>
+{% endblock %}
+{% block body %}
+
+  <div class="container my-3 py-2">
+    <div class="row">
+      <div class="col-sm">
+        <div class="btn-group-toggle" data-toggle="buttons">
+          <label class="btn btn-secondary active">
+            <input type="checkbox" checked> Wildfires
+          </label>
+        </div>
+      </div>
+      <div class="col-sm">
+        <div class="btn-group-toggle" data-toggle="buttons">
+          <label class="btn btn-secondary active">
+            <input type="checkbox" checked> Combustion Factories
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container my-auto p-2">
     <div id="map"></div>
-    <script src="https://d3js.org/d3.v4.min.js"></script>
-    <script src="http://d3js.org/topojson.v1.min.js"></script>
-    <script src="static/js/visualizationmap.js"></script>
-  </body>
-</html>
+  </div>
+  <div class="container my-3 p-2">
+    <div class="row">
+      <div class="col-sm">
+      </div>
+      <div class="col-sm">
+        <form action = {{url_for("hello_world")}}>
+          <button class="btn btn-info" type="submit">Back</button>
+        </form>
+      </div>
+      <div class="col-sm">
+      </div>
+    </div>
+  </div>
+{% endblock %}
+{% block script %}
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+  <script src="http://d3js.org/topojson.v1.min.js"></script>
+  <script src="static/js/visualizationmap.js"></script>
+{% endblock %}

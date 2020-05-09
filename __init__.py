@@ -23,7 +23,9 @@ def globalTempAnomaly():
 @app.route("/historialTemp")
 def moreHistory():
     return render_template("historyTells.html");
-
+@app.route("/usmap")
+def usMap():
+    return render_template("usmap.html")
 if __name__ == "__main__":
     app.debug = True
     app.run()

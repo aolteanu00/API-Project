@@ -16,7 +16,7 @@
   */
   d3.queue()
     .defer(d3.json, "static/json/us.json")
-    .defer(d3.csv, "static/wildfire.csv")
+    .defer(d3.csv, "static/data/wildfire.csv")
     .await(ready)
 
 
@@ -64,10 +64,27 @@
     svg.selectAll(".wildfire")
       .data(wildfires)
       .enter().append("circle")
+      .transition()
+      .ease(d3.easeLinear)
+      .duration(100)
       .attr("class", "wildfire")
       .attr("r", 2)
-      .attr("text-anchor", "end")
-      .attr("stroke", "black")
-      .
+      .attr("stroke", "red")
+      .attr("cx", function(d) {
+        var coords =  projection( [d.longitude, d.latitude] )
+        // console.log(d)
+        return coords[0]
+      })
+      .attr("cy",function(d) {
+        var coords =  projection( [d.longitude, d.latitude] )
+        // console.log(d)
+        return coords[1]
+      })
+      .attr("opacity", 0.3)
   }
+
+  function render(){
+    
+  }
+
 })();
