@@ -52,4 +52,54 @@ with open('industrialcombenergy-2014.csv', newline='') as data_file:
             collection.insert_one({'state':state, 'zip':zip, 'MMBtu_total':MMBtu_total, 'GWht_total':GWht_total})
         rowNum += 1
 
+
+# ADDING WILDFIRES BY STATE
+collection = database['wildfires']
+with open('wildfires-state.csv', newline='') as data_file:
+    reader = csv.reader(data_file, delimiter=',')
+    rowNum = 0
+
+    for row in reader:
+        if (rowNum >= 1):
+            total_state = {}
+            numFires_state = {}
+            numAcres_state = {}
+
+            numFires_state['2010'] = int(row[1])
+            numAcres_state['2010'] = int(row[2])
+            ###
+            numFires_state['2011'] = int(row[3])
+            numAcres_state['2011'] = int(row[4])
+            ###
+            numFires_state['2013'] = int(row[5])
+            numAcres_state['2013'] = int(row[6])
+            ###
+            numFires_state['2014'] = int(row[7])
+            numAcres_state['2014'] = int(row[8])
+            ###
+            numFires_state['2015'] = int(row[9])
+            numAcres_state['2015'] = int(row[10])
+            ###
+            numFires_state['2016'] = int(row[1])
+            numAcres_state['2016'] = int(row[12])
+            ###
+            numFires_state['2017'] = int(row[13])
+            numAcres_state['2017'] = int(row[14])
+            ###
+            numFires_state['2018'] = int(row[15])
+            numAcres_state['2018'] = int(row[16])
+            ###
+            numFires_state['2019'] = int(row[17])
+            numAcres_state['2019'] = int(row[18])
+
+            total_state['state'] = row[0]
+            total_state['numFires'] = numFires_state
+            total_state['numAcres'] = numAcres_state
+
+            collection.insert_one(total_state)
+
+            ###end
+        rowNum += 1
+
+
 client.close()
