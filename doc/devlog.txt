@@ -22,3 +22,5 @@ May 8th 2020
 14:52 -- chowdhuryB: got line animation working, starting on displaying tempurature anomaly data.
 
 15:49 -- chowdhuryB: worked on some quick frontend stuff, added global temp data.
+
+21:15 -- chowdhuryB: got graph working for global temp data, color scale.
