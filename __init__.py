@@ -2,6 +2,7 @@
 #Peter Pickled Peppers
 
 from flask import Flask, request, redirect, session, render_template, url_for, flash
+from util.procureData import getData
 import os
 
 app = Flask(__name__)
@@ -22,7 +23,11 @@ def globalTempAnomaly():
 
 @app.route("/historialTemp")
 def moreHistory():
-    return render_template("historyTells.html");
+    moberg = getData("util/tempReconstructions/mobergReconstruction.txt")
+    christiansen =getData("util/tempReconstructions/christiansenReconstruction.txt")
+    shi = getData("util/tempReconstructions/shiReconstruction.txt")
+    print(moberg[0])
+    return render_template("historyTells.html",mobergdata=moberg,christiansendata=christiansen,shidata=shi)
 
 if __name__ == "__main__":
     app.debug = True
