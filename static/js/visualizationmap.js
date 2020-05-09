@@ -55,6 +55,8 @@
       .enter().append("path")
       .attr("class", "state")
       .attr("d", path)
+      .on('mouseover', handleMouseOver)
+      .on('mouseout', handleMouseOut)
 
     /*
     add the wildfires
@@ -83,8 +85,29 @@
       .attr("opacity", 0.3)
   }
 
-  function render(){
-    
+  //======================================creds to http://bl.ocks.org/WilliamQLiu/76ae20060e19bf42d774==========================================================
+  function handleMouseOver(d, i) {  // Add interactivity
+    // Use D3 to select element, change color and size
+    d3.select(this).classed("selected", true)
+    // Specify where to put label of text
+    svg.append("text").attr({
+       id: "t",  // Create an id for text so we can select it later for removing on mouseout
+        x: d.x,
+        y: function() { return yScale(d.cy) - 15; }
+    })
+    .text(function() {
+      return [d.cx, d.cy];  // Value of the text
+    });
   }
+
+  function handleMouseOut(d, i) {
+    // Use D3 to select element, change color back to normal
+    d3.select(this).classed("selected", false)
+
+    // Select text by id and then remove
+    d3.select("#t" + d.cx + "-" + d.cy + "-" + i).remove();  // Remove text location
+  }
+  //===============================================================================================================================================================
+
 
 })();
