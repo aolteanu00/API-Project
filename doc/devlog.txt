@@ -19,6 +19,9 @@ May 7th, 2020
 22:17 -- ohC: got the map working and will be displaying the data soon
 
 May 8th 2020
+
+13:20 -- tanM: finished initializing datasets into mongo database.
+
 14:52 -- chowdhuryB: got line animation working, starting on displaying tempurature anomaly data.
 
 15:49 -- chowdhuryB: worked on some quick frontend stuff, added global temp data.
