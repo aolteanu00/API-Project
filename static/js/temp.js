@@ -1,4 +1,4 @@
-console.log("wassup");
+console.log("Thank you Mike Foster and Eric Huntley from http://duspviz.mit.edu/d3-workshop/transitions-animation/ for the line animination stuff");
 
 let margin = {"top":10,"left":20,"right":10,"bottom":4};
 let width = 870;
@@ -148,7 +148,7 @@ let createBarGraph1 = function(data){
 
 
 }
-
+//creates animation of line tracing the bar graph
 let path0 = function(data){
     let x = d3.scaleTime()
 	.domain(d3.extent(data.map(d => d["Date"])))
@@ -177,7 +177,7 @@ let path0 = function(data){
 	.attr("stroke-dasharray", totalLength + " " + totalLength)
 	.attr("stroke-dashoffset", totalLength)
 	.transition() 
-	.duration(10000) 
+	.duration(8000) 
 	.ease(d3.easeLinear) 
 	.attr("stroke-dashoffset", 0);
 }
@@ -210,7 +210,7 @@ let path1 = function(data){
 	.attr("stroke-dasharray", totalLength + " " + totalLength)
 	.attr("stroke-dashoffset", totalLength)
 	.transition() 
-	.duration(10000) 
+	.duration(8000) 
 	.ease(d3.easeLinear) 
 	.attr("stroke-dashoffset", 0);
 }

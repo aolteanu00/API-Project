@@ -20,6 +20,9 @@ def extremes():
 def globalTempAnomaly():
     return render_template("globalTemp.html")
 
+@app.route("/historialTemp")
+def moreHistory():
+    return render_template("historyTells.html");
 
 if __name__ == "__main__":
     app.debug = True
