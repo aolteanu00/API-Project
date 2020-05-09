@@ -26,4 +26,6 @@ May 8th 2020
 21:15 -- chowdhuryB: got graph working for global temp data, color scale.
 
 May 9th 2020
-2:19 -- chowdhuryB: added some buttons, line anim for global temp created moreGlobal route.
+2:19 -- chowdhuryB: added some buttons, line anim for global temp, created moreGlobal route.
+
+3:00 -- chowdhuryB: Added data citation for global temp data.
