@@ -9,9 +9,9 @@ let headline = d3.select("#headline")
     .style("text-align","center")
     .html("US Tempurature Extremes")
 //centers 
-d3.selectAll("div")
+d3.select("body")
     .style("text-align","center")
-
+    .style("background-color","#9ABD97")
 
 let chart = d3.select("#chart").append("svg")
     .attr("width", width+margin.left + margin.right)

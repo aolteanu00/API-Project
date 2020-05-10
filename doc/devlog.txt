@@ -33,4 +33,6 @@ May 9th 2020
 
 3:00 -- chowdhuryB: Added data citation for global temp data.
 
+20:00 -- chowdhuryB: Got historial temp data to js.
+
 21:19 -- tanM: added help page using representative api
