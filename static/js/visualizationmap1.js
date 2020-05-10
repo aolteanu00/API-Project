@@ -153,6 +153,7 @@
             }
           })
           .attr("opacity", 0.6)
+        d3.selectAll(".factory")
           .on("mouseover", handleMouseOver)
           .on("mouseout", handleMouseOut)
       });
@@ -162,14 +163,13 @@
     // Use D3 to select element, change color and size
     d3.select(this).classed("selected", true)
     // Specify where to put label of text
-    svg.append("text").attr({
-      id: "t" + d.x + "-" + d.y + "-" + i,  // Create an id for text so we can select it later for removing on mouseout
-           x: function() { return d.x - 30; },
-           y: function() { return d.y - 15; }
-       })
-       .text(function() {
-         return [d.FUEL_TYPE];  // Value of the text
-       });
+    svg.append("text")
+      .attr("id", "t" + d.x + "-" + d.y + "-" + i)
+      .attr("x", d.x-30)
+      .attr("y", d.x-15)
+      .text(function() {
+       return [d.FUEL_TYPE];  // Value of the text
+      });
   }
 
   function handleMouseOut(d, i) {
