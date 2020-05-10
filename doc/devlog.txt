@@ -38,3 +38,8 @@ May 9th 2020
 21:19 -- tanM: added help page using representative api. working on helper methods for temperatures
 
 23:04 -- chowdhuryB: Got historial temp data animations working.
+
+
+May 10th 2020
+
+17:18 -- chowdhuryB: Added data will start working on the front end stuff.

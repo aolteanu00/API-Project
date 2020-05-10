@@ -167,7 +167,7 @@ let woah = function(){
 
 	    mes.append("p")
 		.style("font-style","16px")
-		.text("\"Yea but what those darn liberal commies won't tell you is that the Earth has always been warming. BOOM, GET WRECKED you brainwashed liberal!\"")
+		.text("\"Yea but what those liberal commies won't tell you is that the Earth has always been warming. BOOM, GET WRECKED!\"")
 	    
 	    mes.append("a")
 	    	.attr("href","/historialTemp")
