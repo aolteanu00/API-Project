@@ -28,8 +28,8 @@ def usMap():
     date = "01/01/2014"
     if ('date' in request.form):
         date =  request.form['date']
-        date = date.split("/")
-        date = date[2] + "-" + date[0] + "-" + date[1]
+    date = date.split("/")
+    date = date[2] + "-" + date[0] + "-" + date[1]    
     print(date)
     return render_template("usmap.html", date=date)
 if __name__ == "__main__":
