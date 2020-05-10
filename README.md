@@ -2,7 +2,22 @@
 ## Project WildFire
 
 ### ROSTER
-#### Connor Oh, Biraj Chowdhury, Manfred Tan, Alex Olteanu
+Alex Olteanu (PM)
+- Supervise team, ensures deadlines
+- helping with front end development
+
+Biraj Chowdhury
+- Working to visualize data with D3
+- Front-end layouts
+
+Connor Oh
+- Working to visualize data with D3
+- Using javascript to manipulate data
+
+Manfred Tan
+- Working with data sets and storing data
+- Creating helper methods for data
+
 
 - This is a project based on relating average temperature per state data and number of factories using combustion energy data to the number of wildfires in certain areas
 - It will represented by a map of the USA and a pie chart
