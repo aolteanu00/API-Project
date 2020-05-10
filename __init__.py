@@ -45,17 +45,20 @@ def help():
 
 @app.route("/zip", methods=['GET', 'POST'])
 def zip():
-    zip = request.form['zip']
-    print(zip)
-    link = "https://whoismyrepresentative.com/getall_mems.php?output=json&zip=" + zip
-    try:
-        open = urlopen(link)
-        response = open.read()
-        data = json.loads( response )
-        results = data['results']
-    except:
-        results = [{'name': 'Invalid ZIP code', 'link':''}]
-    return render_template("help.html", results=results)
+    print(request.form)
+    if('zip' in request.form):
+        zip = request.form['zip']
+        print(zip)
+        link = "https://whoismyrepresentative.com/getall_mems.php?output=json&zip=" + zip
+        try:
+            open = urlopen(link)
+            response = open.read()
+            data = json.loads( response )
+            results = data['results']
+        except:
+            results = [{'name': 'Invalid ZIP code', 'link':''}]
+        return render_template("help.html", results=results)
+    return render_template("help.html")
 
 @app.route("/usmap", methods=["GET","POST"])
 def usMap():
