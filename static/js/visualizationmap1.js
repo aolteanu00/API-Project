@@ -10,6 +10,8 @@
 //buttons
   var firesbutton = document.getElementById('fires');
   var factoriesbutton = document.getElementById('facts');
+  var renderfires=false;
+  var renderfacts=false;
 //end
   /*
     Making the margins all 0
@@ -38,7 +40,7 @@
   */
   var projection = d3.geoAlbersUsa()
     .translate([ width / 2, height / 2])
-    .scale(950)
+    .scale(900)
   /*
   create a path (geoPath)
   and set its projection
@@ -77,6 +79,7 @@
   }
 
   function renderWildfires() {
+    renderfires = !renderfires;
     var wildfires = [];
     d3.csv("static/data/wildfire.csv", function(data){
       for(let i = 0; i<data.length; i++){
@@ -92,7 +95,8 @@
         .ease(d3.easeLinear)
         .duration(1000)
         .attr("class", "wildfire")
-        .attr("r", 2)
+        .attr("r", 5)
+        .attr("fill", "orange")
         .attr("stroke", "red")
         .attr("cx", function(d) {
           var coords =  projection( [d.longitude, d.latitude] )
@@ -104,11 +108,42 @@
           // console.log(d)
           return coords[1]
         })
-        .attr("opacity", 0.5)
+        .attr("opacity", 0.6)
     });
     /*
 
       */
+    }
+
+    function renderFactories() {
+      renderfacts = !renderfacts;
+      var factories = [];
+      d3.csv("static/data/factories.csv", function(data){
+        //console.log(data)
+        for(let i = 0; i<5; i++){
+          console.log(data[i].LATITUDE)
+        }
+        svg.selectAll(".factory")
+          .data(data)
+          .enter().append("circle")
+          .transition()
+          .ease(d3.easeLinear)
+          .duration(1000)
+          .attr("class", "factory")
+          .attr("r", 5)
+          .attr("fill", "blue")
+          .attr("stroke", "green")
+          .attr("cx", function(d) {
+            var coords =  projection( [d.LONGITUDE, d.LATITUDE] );
+            return coords[0];
+          })
+          .attr("cy",function(d) {
+            var coords =  projection( [d.LONGITUDE, d.LATITUDE] );
+            // console.log(d)
+            return coords[1];
+          })
+          .attr("opacity", 0.6)
+      });
     }
   //======================================creds to http://bl.ocks.org/WilliamQLiu/76ae20060e19bf42d774==========================================================
   function handleMouseOver(d, i) {  // Add interactivity
@@ -134,4 +169,29 @@
   }
   //===============================================================================================================================================================
 
-  firesbutton.addEventListener('click', renderWildfires);
+
+  firesbutton.addEventListener('click', function(e){
+    if(!renderfires){
+        renderWildfires();
+    }else{
+      svg.selectAll(".wildfire")
+        .transition()
+        .ease(d3.easeLinear)
+        .duration(1000)
+        .remove();
+      renderfires = false;
+    }
+  });
+
+  factoriesbutton.addEventListener('click', function(e){
+    if(!renderfacts){
+        renderFactories();
+    }else{
+      svg.selectAll(".factory")
+        .transition()
+        .ease(d3.easeLinear)
+        .duration(1000)
+        .remove();
+      renderfacts = false;
+    }
+  });
