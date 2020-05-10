@@ -6,6 +6,11 @@
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <!-- Special version of Bootstrap that only affects content wrapped in .bootstrap-iso -->
+  <link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css" />
+  <!--Font Awesome (added because you use icons in your prepend/append)-->
+  <link rel="stylesheet" href="https://formden.com/static/cdn/font-awesome/4.4.0/css/font-awesome.min.css" />
+
   <style>
   *{
     font-family: "Helvetica Neue";
@@ -24,11 +29,13 @@
     fill: yellow;
   }
   </style>
+  <!-- Inline CSS based on choices in "Settings" tab -->
+  <style>.bootstrap-iso .formden_header h2, .bootstrap-iso .formden_header p, .bootstrap-iso form{font-family: Arial, Helvetica, sans-serif; color: black}.bootstrap-iso form button, .bootstrap-iso form button:hover{color: white !important;} .asteriskField{color: red;}</style>
 {% endblock %}
 {% block body %}
 
-  <div class="container-fluid mt-3 py-2 bg-primary">
-    <div class="row">
+  <div class="container-fluid py-2 bg-primary">
+    <div class="row mt-3">
       <div class="col-sm">
         <div class="text-center">
           <button class="btn btn-warning" id="fires">Toggle Wildfires</button>
@@ -41,31 +48,44 @@
       </div>
     </div>
   </div>
+
   <div class="bootstrap-iso">
-    <div class="container-fluid mb-3 bg-primary">
+    <div class="container-fluid  bg-primary">
       <div class="row">
-        <div class="col-md-6 col-sm-6 col-xs-12 bg-secondary rounded">
-          <!-- Form code begins -->
-          <div class="text-center">
-            <form id="info" action="visualizationmap1" method="post">
-              <div class="form-group"> <!-- Date input -->
-                <label class="control-label" for="date">Date</label>
-                <input class="form-control" id="date" name="date" placeholder="MM/DD/YYY" type="text"/>
-              </div>
-              <div class="form-group"> <!-- Submit button -->
-                <button class="btn btn-light " name="submit" type="submit">Submit</button>
-              </div>
-            </form>
-          <!-- Form code ends -->
-          </div>
-        </div>
-        <div class="col-md-6 col-sm-6 col-xs-12 bg-white rounded">
-          <div class="text-center">
-            <h5>DATE:</h5>
-            <p id="dateint"></p>
-          </div>
-        </div>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <form action={{url_for("usMap")}} method="post">
+           <div class="form-group ">
+            <label class="control-label " for="date">
+             Date
+            </label>
+            <div class="input-group">
+             <div class="input-group-addon">
+              <i class="fa fa-calendar">
+              </i>
+             </div>
+             <input class="form-control" id="date" name="date" placeholder="MM/DD/YYYY" type="text"/>
+             <div class="input-group-addon">
+              <i class="fa fa-step-forward">
+              </i>
+             </div>
+            </div>
+           </div>
+           <div class="form-group">
+            <div>
+             <button class="btn btn-primary " name="submit" type="submit">
+              Submit
+             </button>
+            </div>
+           </div>
+          </form>
+         </div>
       </div>
+    </div>
+  </div>
+  <div class="container-fluid p-2 bg-success rounded">
+    <div class="text-center text-light font-weight-bold">
+      <h5>DATE:</h5>
+      <p id="dateint"></p>
     </div>
   </div>
   <div class="container-fluid mt-auto mx-auto p-2 bg-dark">
@@ -74,8 +94,11 @@
   <div class="container-fluid mb-auto mx-auto p-2 bg-dark">
     <div class="card" style="width: auto;">
       <div class="card-body">
-        <h5 class="card-title"></h5>
-        <p class="card-text"></p>
+        <h5 class="card-title" id="firsttitle"></h5>
+        <p class="card-text" id="firsttext"></p>
+        <hr>
+        <h5 class="card-title" id="sectitle"></h5>
+        <p class="card-text" id="sectext"></p>
       </div>
     </div>
   </div>
@@ -116,7 +139,7 @@
         })
     })
   </script>
-
+  <script
   <script src="https://d3js.org/d3.v4.min.js"></script>
   <script src="http://d3js.org/topojson.v1.min.js"></script>
   <script type="text/javascript" charset="utf-8">

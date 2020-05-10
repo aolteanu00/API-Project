@@ -1,5 +1,5 @@
 // making the date
-  console.log(newDate);
+
   var realDate = [newDate[2]];
   realDate.push('-', newDate[0]);
   realDate.push('-', newDate[1]);
@@ -68,8 +68,12 @@
       .enter().append("path")
       .attr("class", "state")
       .attr("d", path)
-      .on('mouseover', handleMouseOver)
-      .on('mouseout', handleMouseOut)
+      .on('mouseover', function(d){
+        d3.select(this).classed("selected", true)
+      })
+      .on('mouseout', function(d){
+        d3.select(this).classed("selected", false)
+      })
 
     /*
     add the wildfires
@@ -149,6 +153,8 @@
             }
           })
           .attr("opacity", 0.6)
+          .on("mouseover", handleMouseOver)
+          .on("mouseout", handleMouseOut)
       });
     }
   //======================================creds to http://bl.ocks.org/WilliamQLiu/76ae20060e19bf42d774==========================================================
@@ -157,13 +163,13 @@
     d3.select(this).classed("selected", true)
     // Specify where to put label of text
     svg.append("text").attr({
-       id: "t",  // Create an id for text so we can select it later for removing on mouseout
-        x: d.x,
-        y: function() { return yScale(d.cy) - 15; }
-    })
-    .text(function() {
-      return [d.cx, d.cy];  // Value of the text
-    });
+      id: "t" + d.x + "-" + d.y + "-" + i,  // Create an id for text so we can select it later for removing on mouseout
+           x: function() { return d.x - 30; },
+           y: function() { return d.y - 15; }
+       })
+       .text(function() {
+         return [d.FUEL_TYPE];  // Value of the text
+       });
   }
 
   function handleMouseOut(d, i) {
@@ -171,7 +177,7 @@
     d3.select(this).classed("selected", false)
 
     // Select text by id and then remove
-    d3.select("#t" + d.cx + "-" + d.cy + "-" + i).remove();  // Remove text location
+    d3.select("#t" + d.x + "-" + d.y + "-" + i).remove();  // Remove text location
   }
   //===============================================================================================================================================================
 
@@ -179,19 +185,27 @@
   firesbutton.addEventListener('click', function(e){
     if(!renderfires){
         renderWildfires();
+        document.getElementById("firsttitle").innerHTML="Wildfires";
+        document.getElementById("firsttext").innerHTML="Wildfires have clearly been a big problem with it destroying the homes of many, including animals.\n All the orange spots show the locations of these wildfires on this day.";
     }else{
       svg.selectAll(".wildfire")
         .remove();
       renderfires = false;
+      document.getElementById("firsttitle").innerHTML="";
+      document.getElementById("firsttext").innerHTML="";
     }
   });
 
   factoriesbutton.addEventListener('click', function(e){
     if(!renderfacts){
         renderFactories();
+        document.getElementById("sectitle").innerHTML="Combustion Factories";
+        document.getElementById("sectext").innerHTML="We believe there to be a correlation between the locations of combustion energy factories and these wildfires.\n These are the locations that were last updated in 2014.";
     }else{
       svg.selectAll(".factory")
         .remove();
       renderfacts = false;
+      document.getElementById("sectitle").innerHTML="";
+      document.getElementById("sectext").innerHTML="";
     }
   });
