@@ -19,4 +19,6 @@ Factories Dataset: https://data.world/us-doe-gov/19c607fa-1687-4bc4-a6dd-74b88b8
 Wildfire Dataset: https://firms.modaps.eosdis.nasa.gov/download <br />
 Temperature Dataset: https://www.ncdc.noaa.gov/cag/global/time-series <br />
 Extreme Tempuratures: https://www.ncdc.noaa.gov/extremes/cei/graph/us/01-12/1/data.csv <br />
-Approximated Historial Tempurature Data: https://www.climatelevels.org/files/nhtemp-moberg2005.txt
+Approximated Historial Tempurature Data1: https://www.climatelevels.org/files/nhtemp-moberg2005.txt <br />
+Approximated Historial Tempurature Data2: https://www1.ncdc.noaa.gov/pub/data/paleo/contributions_by_author/christiansen2012/christiansen2012.txt <br />
+Approximated Historial Tempurature Data1: https://www1.ncdc.noaa.gov/pub/data/paleo/contributions_by_author/shi2013/shi2013nh.txt <br />
