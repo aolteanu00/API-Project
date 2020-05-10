@@ -20,7 +20,7 @@ May 7th, 2020
 
 May 8th 2020
 
-13:20 -- tanM: finished initializing datasets into mongo database.
+13:20 -- tanM: finished initializing datasets. cleaned up csv files
 
 14:52 -- chowdhuryB: got line animation working, starting on displaying tempurature anomaly data.
 
@@ -32,3 +32,5 @@ May 9th 2020
 2:19 -- chowdhuryB: added some buttons, line anim for global temp, created moreGlobal route.
 
 3:00 -- chowdhuryB: Added data citation for global temp data.
+
+21:19 -- tanM: added help page using representative api
