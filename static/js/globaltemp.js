@@ -68,7 +68,6 @@ let createBarGraph = function(data){
     
     chart.append("g")
 	.attr("class", "xaxis")
-    //.call(xAxis)
     
     console.log(x.bandwidth())
     
@@ -160,7 +159,8 @@ let woah = function(){
 	.style("visibility","visible")
 	.on("click",function(){
 	    alert("WOAH, a wild Ben Shapiro viewer has appeared!!!");
-	    
+
+	    //add meme
 	    mes.append("img")
 		.attr("src","https://scontent-lga3-1.xx.fbcdn.net/v/t31.0-8/16992481_1851876378431631_6536080567456844603_o.png?_nc_cat=103&_nc_sid=2d5d41&_nc_ohc=gDRzrBr8IbYAX92eM2G&_nc_ht=scontent-lga3-1.xx&oh=855967394e221befce9b7e92fe600a29&oe=5EDE12A6")
 	    	.style("width","300px")

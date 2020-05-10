@@ -243,7 +243,7 @@ extremes.then(function(csv){
 	})
     d3.select("#stop")
 	.on("click",function(){
-	    d3.select(".line").remove();
+	    d3.selectAll(".line").remove();
 	    animStarted = false;
 	    return;
 	})

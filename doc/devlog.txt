@@ -36,3 +36,5 @@ May 9th 2020
 20:00 -- chowdhuryB: Got historial temp data to js.
 
 21:19 -- tanM: added help page using representative api
+
+23:04 -- chowdhuryB: Got historial temp data animations working.
