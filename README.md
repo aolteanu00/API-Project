@@ -18,7 +18,7 @@ Manfred Tan
 - Working with data sets and storing data
 - Creating helper methods for data
 
-
+## Description
 - This is a project based on relating average temperature per state data and number of factories using combustion energy data to the number of wildfires in certain areas
 - It will represented by a map of the USA and a pie chart
 - For the USA Map, each state will show:
@@ -30,6 +30,7 @@ Manfred Tan
   * then it will show the percentage of those states with wildfires that had an average temperature above 80
   * then it will show the percentage of those states with wildfires that had factories using combustion energy
 
+## Datasets and APIs
 Factories Dataset: https://data.world/us-doe-gov/19c607fa-1687-4bc4-a6dd-74b88b849644 <br />
 Wildfire Dataset: https://firms.modaps.eosdis.nasa.gov/download <br />
 Temperature Dataset: https://www.ncdc.noaa.gov/cag/global/time-series <br />
