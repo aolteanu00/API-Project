@@ -62,9 +62,10 @@
     add the wildfires
     get the x/y from the lat/long + projection
     */
-    console.log(wildfires)
+    var limiteddata = wildfires.filter(selectFires)
+    console.log(limiteddata)
     svg.selectAll(".wildfire")
-      .data(wildfires)
+      .data(limiteddata)
       .enter().append("circle")
       .transition()
       .ease(d3.easeLinear)
@@ -109,5 +110,7 @@
   }
   //===============================================================================================================================================================
 
-
+  function selectFires(d) {
+    return d.acq_date === date;
+  }
 })();
