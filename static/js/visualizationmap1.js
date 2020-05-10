@@ -40,7 +40,7 @@
   */
   var projection = d3.geoAlbersUsa()
     .translate([ width / 2, height / 2])
-    .scale(900)
+    .scale(875)
   /*
   create a path (geoPath)
   and set its projection
@@ -120,11 +120,13 @@
       var factories = [];
       d3.csv("static/data/factories.csv", function(data){
         //console.log(data)
-        for(let i = 0; i<5; i++){
-          console.log(data[i].LATITUDE)
+        for(let i = 0; i<200; i++){
+          if(!(data[i] in factories)){
+            factories.push(data[i])
+          };
         }
         svg.selectAll(".factory")
-          .data(data)
+          .data(factories)
           .enter().append("circle")
           .transition()
           .ease(d3.easeLinear)
@@ -135,12 +137,16 @@
           .attr("stroke", "green")
           .attr("cx", function(d) {
             var coords =  projection( [d.LONGITUDE, d.LATITUDE] );
-            return coords[0];
+            if(coords){
+              return coords[0];
+            }
           })
           .attr("cy",function(d) {
             var coords =  projection( [d.LONGITUDE, d.LATITUDE] );
             // console.log(d)
-            return coords[1];
+            if(coords){
+              return coords[1];
+            }
           })
           .attr("opacity", 0.6)
       });
@@ -175,9 +181,6 @@
         renderWildfires();
     }else{
       svg.selectAll(".wildfire")
-        .transition()
-        .ease(d3.easeLinear)
-        .duration(1000)
         .remove();
       renderfires = false;
     }
@@ -188,9 +191,6 @@
         renderFactories();
     }else{
       svg.selectAll(".factory")
-        .transition()
-        .ease(d3.easeLinear)
-        .duration(1000)
         .remove();
       renderfacts = false;
     }
