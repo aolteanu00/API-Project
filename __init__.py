@@ -57,7 +57,14 @@ def zip():
         results = [{'name': 'Invalid ZIP code', 'link':''}]
     return render_template("help.html", results=results)
 
-
+@app.route("/usmap", methods=["GET","POST"])
+def usMap():
+    date = "01/01/2014"
+    if ('date' in request.form and request.form['date'] != ""):
+        date =  request.form['date']
+    date = date.split("/")
+    print(date)
+    return render_template("usmap.html", infdate=date)
 if __name__ == "__main__":
     app.debug = True
     app.run()

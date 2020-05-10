@@ -16,7 +16,7 @@
   */
   d3.queue()
     .defer(d3.json, "static/json/us.json")
-    .defer(d3.csv, "static/wildfire.csv")
+    .defer(d3.csv, "static/data/wildfire.csv")
     .await(ready)
 
 
