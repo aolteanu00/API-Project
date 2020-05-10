@@ -153,15 +153,17 @@
             }
           })
           .attr("opacity", 0.6)
-        d3.selectAll(".factory")
-          .on("mouseover", handleMouseOver)
-          .on("mouseout", handleMouseOut)
+
       });
+      svg.selectAll(".factory")
+        .on('mouseover', function(d){
+          console.log("dfdsf")
+        })
+        .on('mouseout', handleMouseOut)
     }
   //======================================creds to http://bl.ocks.org/WilliamQLiu/76ae20060e19bf42d774==========================================================
   function handleMouseOver(d, i) {  // Add interactivity
     // Use D3 to select element, change color and size
-    d3.select(this).classed("selected", true)
     // Specify where to put label of text
     svg.append("text")
       .attr("id", "t" + d.x + "-" + d.y + "-" + i)
@@ -173,8 +175,6 @@
   }
 
   function handleMouseOut(d, i) {
-    // Use D3 to select element, change color back to normal
-    d3.select(this).classed("selected", false)
 
     // Select text by id and then remove
     d3.select("#t" + d.x + "-" + d.y + "-" + i).remove();  // Remove text location
