@@ -1,27 +1,61 @@
 {% extends "base.html"%}
 {% block body %}
-<h1>Peter Pickled Peppers Presents: [INSERT COOL NAME]!</h1>
-<br>
-<div id="twister">
-  <p>Peter Piper picked a peck of pickled peppers.<br>
-    A peck of pickled peppers Peter Piper picked.<br>
-    If Peter Piper picked a peck of pickled peppers,<br>
-    Where's the peck of pickled peppers Peter Piper picked?</p>
+<div class="container-fluid bg-success p-2">
+  <h1 class="display-1 text-white text-center font-weight-bold">Peter Pickled Peppers Presents: [INSERT COOL NAME]!</h1>
 </div>
-<br>
-<p></p>
-<br>
-<form action = {{url_for("extremes")}}>
-  <button class="btn btn-info" type="submit"> Look at this</button>
-</form>
-<br>
-<form action = {{url_for("globalTempAnomaly")}}>
-  <button class="btn btn-success" type = "submit"> Or you can look at this</button>
-</form>
-<br>
-<form action = {{url_for("usMap")}}>
-  <button class="btn btn-info" type="submit">The US Map</button>
-</form>
+<div class="container-fluid bg-secondary p-2">
+  <div id="twister">
+    <p class="text-white text-center font-weight-bold">Peter Piper picked a peck of pickled peppers.<br>
+      A peck of pickled peppers Peter Piper picked.<br>
+      If Peter Piper picked a peck of pickled peppers,<br>
+      Where's the peck of pickled peppers Peter Piper picked?</p>
+  </div>
+</div>
+<div class="container-fluid bg-dark p-2 text-white font-weight-bold text-wrap">
+  <p class="text-center">
+    Wildfires have been catching a lot more attention in recent years and we thought that something should be done about it. We have gathered data to show the correlations between these fires and other instances, such as:
+  </p>
+  <div class="row">
+    <div class="col-md"></div>
+    <div class="col-sm">
+      <div class="container">
+        <ul>
+          <li>Combustion Energy Using Factories</li>
+          <li>Temperature Anomalies</li>
+          <li>Global Temperatures</li>
+        </ul>
+      </div>
+
+    </div>
+    <div class="col-md"></div>
+  </div>
+  <p class="text-center">
+    We even have provided a service to find your local representative to notify them of these correlations.
+  </p>
+</div>
+<div class="container-fluid bg-white p-2 text-center">
+  <div class="row">
+    <div class="col-md m-2">
+      <form action = {{url_for("extremes")}}>
+        <button class="btn btn-info" type="submit">Temperature Extremes</button>
+      </form>
+      <div class="col-md m-2">
+        <form action = {{url_for("globalTempAnomaly")}}>
+          <button class="btn btn-warning" type = "submit">Global Temperature</button>
+        </form>
+      </div>
+      <div class="col-md m-2">
+        <form action = {{url_for("usMap")}}>
+          <button class="btn btn-danger" type="submit">Wildfires</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+
+</div>
+
 {%endblock%}
 
 {% block script%}
