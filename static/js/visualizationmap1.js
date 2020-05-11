@@ -4,7 +4,7 @@
   realDate.push('-', newDate[0]);
   realDate.push('-', newDate[1]);
   realDate = realDate.join('');
-  console.log(realDate.toString());
+  //console.log(realDate.toString());
   document.getElementById("dateint").innerHTML=realDate.toString();
 // end
 //buttons
@@ -49,7 +49,7 @@
     .projection(projection)
 
   function ready (error, data, wildfires) {
-    console.log(data)
+    //console.log(data)
     /*
     topojson.feature converts
     our Raw geo data into useable geo data
@@ -58,7 +58,7 @@
     */
 
     var states = topojson.feature(data, data.objects.states).features
-    console.log(states)
+    //console.log(states)
 
     /*
     add paths for each states
@@ -92,16 +92,21 @@
         }
       }
       console.log(wildfires)
-      svg.selectAll(".wildfire")
+      var fires = svg.selectAll(".wildfire")
         .data(wildfires)
         .enter().append("circle")
-        .transition()
+        .attr("class", "wildfire")
+        .attr("r", 2)
+        .attr("fill", "gray")
+        .attr("stroke", "black")
+        .attr("opacity", 0.6)
+
+      fires.transition()
         .ease(d3.easeLinear)
         .duration(1000)
-        .attr("class", "wildfire")
-        .attr("r", 5)
         .attr("fill", "orange")
         .attr("stroke", "red")
+        .attr("r", 5)
         .attr("cx", function(d) {
           var coords =  projection( [d.longitude, d.latitude] )
           // console.log(d)
@@ -112,33 +117,57 @@
           // console.log(d)
           return coords[1]
         })
-        .attr("opacity", 0.6)
     });
     /*
 
       */
     }
-
+    function checkFactories(fact, factories){
+      var coords = projection( [fact.LONGITUDE, fact.LATITUDE] );
+      if(coords != null){
+        var x1 = coords[0];
+        var y1 = coords[1];
+        for(let i = 0; i<factories.length; i++){
+          var coords1 =  projection( [factories[i].LONGITUDE, factories[i].LATITUDE] )
+          var x2 = coords1[0];
+          var y2 = coords1[1];
+          var a = x2- x1;
+          var b = y2 - y1;
+          if (Math.sqrt( a*a + b*b ) < 7){
+            //console.log("factory too close")
+            return false;
+          }
+        }
+        //console.log("yay")
+        return true;
+      }
+      //console.log("factory has no coords")
+      return false;
+    }
     function renderFactories() {
       renderfacts = !renderfacts;
       var factories = [];
       d3.csv("static/data/factories.csv", function(data){
         //console.log(data)
-        for(let i = 0; i<200; i++){
-          if(!(data[i] in factories)){
+        for(let i = 0; i<data.length; i++){
+          if(checkFactories(data[i], factories)){
             factories.push(data[i])
           };
         }
-        svg.selectAll(".factory")
+        var facts = svg.selectAll(".factory")
           .data(factories)
           .enter().append("circle")
-          .transition()
+          .attr("class", "factory")
+          .attr("r", 2)
+          .attr("fill", "gray")
+          .attr("stroke", "black")
+          .attr("opacity", 0.6)
+        facts.transition()
           .ease(d3.easeLinear)
           .duration(1000)
-          .attr("class", "factory")
+          .attr("fill", "green")
+          .attr("stroke", "black")
           .attr("r", 5)
-          .attr("fill", "blue")
-          .attr("stroke", "green")
           .attr("cx", function(d) {
             var coords =  projection( [d.LONGITUDE, d.LATITUDE] );
             if(coords){
@@ -152,32 +181,40 @@
               return coords[1];
             }
           })
-          .attr("opacity", 0.6)
-
+        facts.on('mouseover', handleMouseOver)
+          .on('mouseout', handleMouseOut)
       });
-      svg.selectAll(".factory")
-        .on('mouseover', function(d){
-          console.log("dfdsf")
-        })
-        .on('mouseout', handleMouseOut)
+      //console.log(svg.selectAll(".state"));
+      //console.log(svg.selectAll(".factory"));
+
     }
   //======================================creds to http://bl.ocks.org/WilliamQLiu/76ae20060e19bf42d774==========================================================
   function handleMouseOver(d, i) {  // Add interactivity
     // Use D3 to select element, change color and size
     // Specify where to put label of text
+    //console.log(d);
+    var x = projection( [d.LONGITUDE, d.LATITUDE] )[0];
+    var y = projection( [d.LONGITUDE, d.LATITUDE] )[1];
+    //console.log(x)
+    //console.log(y)
     svg.append("text")
-      .attr("id", "t" + d.x + "-" + d.y + "-" + i)
-      .attr("x", d.x-30)
-      .attr("y", d.x-15)
+      .attr("id", "t")  // Create an id for text so we can select it later for removing on mouseout
+      .attr("x", function() { return x - 30; })
+      .attr("y", function() { return y - 15; })
+      .attr("fill", "white")
+      .attr("font-weight", 500)
       .text(function() {
-       return [d.FUEL_TYPE];  // Value of the text
+         return [d.FUEL_TYPE];  // Value of the text
       });
   }
 
   function handleMouseOut(d, i) {
 
     // Select text by id and then remove
-    d3.select("#t" + d.x + "-" + d.y + "-" + i).remove();  // Remove text location
+    var x = projection( [d.LONGITUDE, d.LATITUDE] )[0];
+    var y = projection( [d.LONGITUDE, d.LATITUDE] )[1];
+    var id = "#t";
+    d3.select(id).remove();  // Remove text location
   }
   //===============================================================================================================================================================
 
