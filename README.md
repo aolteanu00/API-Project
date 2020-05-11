@@ -42,17 +42,17 @@ Approximated Historial Tempurature Data3: https://www1.ncdc.noaa.gov/pub/data/pa
 ## Instructions
 
 Download the repo by cloning it
-'''
+```
 git clone https://github.com/aolteanu00/proj4.git
-'''
+```
 
 Enter the folder and download the requirements
-'''
+```
 cd proj4
 pip install -r requirements.txt
-'''
+```
 
 Run the code
-'''
+```
 python __init__.py
-'''
+```
