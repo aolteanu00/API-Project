@@ -91,7 +91,7 @@
           wildfires.push(data[i]);
         }
       }
-      console.log(wildfires)
+      //console.log(wildfires)
       var fires = svg.selectAll(".wildfire")
         .data(wildfires)
         .enter().append("circle")
@@ -165,7 +165,7 @@
         facts.transition()
           .ease(d3.easeLinear)
           .duration(1000)
-          .attr("fill", "green")
+          .attr("fill", "blue")
           .attr("stroke", "black")
           .attr("r", 5)
           .attr("cx", function(d) {
@@ -201,8 +201,8 @@
       .attr("id", "t")  // Create an id for text so we can select it later for removing on mouseout
       .attr("x", function() { return x - 30; })
       .attr("y", function() { return y - 15; })
-      .attr("fill", "white")
-      .attr("font-weight", 500)
+      .attr("fill", "black")
+      .attr("font-weight", 750)
       .text(function() {
          return [d.FUEL_TYPE];  // Value of the text
       });

@@ -50,40 +50,42 @@
   </div>
 
   <div class="bootstrap-iso">
-    <div class="container-fluid  bg-primary">
+    <div class="container-fluid p-2 bg-primary">
       <div class="row">
         <div class="col-md-6 col-sm-6 col-xs-12">
           <form action={{url_for("usMap")}} method="post">
-           <div class="form-group ">
-            <label class="control-label " for="date">
-             Date
-            </label>
-            <div class="input-group">
-             <div class="input-group-addon">
-              <i class="fa fa-calendar">
-              </i>
+            <div class="text-center">
+             <div class="form-group ">
+              <label class="control-label " for="date">
+               Date
+              </label>
+              <div class="input-group">
+               <div class="input-group-addon">
+                <i class="fa fa-calendar">
+                </i>
+               </div>
+               <input class="form-control" id="date" name="date" placeholder="MM/DD/YYYY" type="text"/>
+               <div class="input-group-addon">
+                <i class="fa fa-step-forward">
+                </i>
+               </div>
+              </div>
              </div>
-             <input class="form-control" id="date" name="date" placeholder="MM/DD/YYYY" type="text"/>
-             <div class="input-group-addon">
-              <i class="fa fa-step-forward">
-              </i>
+             <div class="form-group">
+              <div>
+               <button class="btn btn-primary " name="submit" type="submit">
+                Submit
+               </button>
+              </div>
              </div>
             </div>
-           </div>
-           <div class="form-group">
-            <div>
-             <button class="btn btn-primary " name="submit" type="submit">
-              Submit
-             </button>
-            </div>
-           </div>
           </form>
          </div>
-      </div>
+       </div>
     </div>
   </div>
-  <div class="container-fluid p-2 bg-success rounded">
-    <div class="text-center text-light font-weight-bold">
+  <div class="container-fluid p-2 bg-secondary">
+    <div class="text-center text-white font-weight-bold">
       <h5>DATE:</h5>
       <p id="dateint"></p>
     </div>
