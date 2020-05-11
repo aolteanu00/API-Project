@@ -24,7 +24,7 @@ Manfred Tan
   * the number of wildfires during the selected month and year in each state
   * the number of factories using combustion energy during the selected month and year in each state
 - For the tempurature datasets:
- * We will implement both bar graphs and line charts to display the change in tempuratures.
+  * We will implement both bar graphs and line charts to display the change in tempuratures.
 
 ## Datasets and APIs
 Factories Dataset: https://data.world/us-doe-gov/19c607fa-1687-4bc4-a6dd-74b88b849644 <br />
