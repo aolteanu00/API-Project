@@ -28,6 +28,8 @@ May 8th 2020
 
 21:15 -- chowdhuryB: got graph working for global temp data, color scale.
 
+22:45 -- ohC: map is displaying actually successfully
+
 May 9th 2020
 2:19 -- chowdhuryB: added some buttons, line anim for global temp, created moreGlobal route.
 
@@ -39,7 +41,11 @@ May 9th 2020
 
 23:04 -- chowdhuryB: Got historial temp data animations working.
 
+23:05 -- ohC: finished the main portion of the map
+
 
 May 10th 2020
 
 17:18 -- chowdhuryB: Added data will start working on the front end stuff.
+
+20:59 -- ohC: finished the help page and completed the popovers as well as limiting the factories and making the transitions work
