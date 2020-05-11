@@ -9,16 +9,23 @@
 {% block body %}
 <div class="container-fluid bg-secondary p-2">
   <h1 class="display-1 text-white text-center font-weight-bold">Take Action</h1>
-  <div class="container m-3 p-2 bg-white rounded">
-    <p class="font-weight-light">
-      Take a chance to notify your local representative of these issues
-    </p>
+  <div class="row">
+    <div class="col-4"></div>
+    <div class="col-4">
+      <div class="container m-3 p-2 bg-white rounded text-center">
+        <p class="font-weight-light">
+          Take a chance to notify your local representative of these issues
+        </p>
+      </div>
+    </div>
+    <div class="col-4"></div>
+
   </div>
 </div>
 <div class="container-fluid bg-info p-2">
   <form action="/zip" method="post">
-    <div class="form-group row">
-      <label for="zip" class="col-4 col-form-label">Enter your Zip Code</label>
+    <div class="form-group row p-4">
+      <label for="zip" class="col-4 col-form-label text-center font-weight-bold">Enter your Zip Code</label>
       <div class="col-8">
         <div class="input-group">
           <div class="input-group-prepend">
@@ -31,7 +38,7 @@
       </div>
     </div>
     <div class="form-group row">
-      <div class="offset-4 col-8">
+      <div class="offset-11 col-8">
         <button name="submit" type="submit" class="btn btn-primary">Submit</button>
       </div>
     </div>
