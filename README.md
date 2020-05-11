@@ -38,3 +38,21 @@ Extreme Tempuratures: https://www.ncdc.noaa.gov/extremes/cei/graph/us/01-12/1/da
 Approximated Historial Tempurature Data1: https://www.climatelevels.org/files/nhtemp-moberg2005.txt <br />
 Approximated Historial Tempurature Data2: https://www1.ncdc.noaa.gov/pub/data/paleo/contributions_by_author/christiansen2012/christiansen2012.txt <br />
 Approximated Historial Tempurature Data3: https://www1.ncdc.noaa.gov/pub/data/paleo/contributions_by_author/shi2013/shi2013nh.txt <br />
+
+## Instructions
+
+Download the repo by cloning it
+```
+git clone https://github.com/aolteanu00/proj4.git
+```
+
+Enter the folder and download the requirements
+```
+cd proj4
+pip install -r requirements.txt
+```
+
+Run the code
+```
+python __init__.py
+```
