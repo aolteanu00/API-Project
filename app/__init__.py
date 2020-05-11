@@ -24,9 +24,9 @@ def globalTempAnomaly():
 
 @app.route("/historialTemp")
 def moreHistory():
-    moberg = getData("util/tempReconstructions/mobergReconstruction.txt")
-    christiansen =getData("util/tempReconstructions/christiansenReconstruction.txt")
-    shi = getData("util/tempReconstructions/shiReconstruction.txt")
+    moberg = getData("app/util/tempReconstructions/mobergReconstruction.txt")
+    christiansen =getData("app/util/tempReconstructions/christiansenReconstruction.txt")
+    shi = getData("app/util/tempReconstructions/shiReconstruction.txt")
     print(moberg[0])
     return render_template("historyTells.html",mobergdata=moberg,christiansendata=christiansen,shidata=shi)
 
