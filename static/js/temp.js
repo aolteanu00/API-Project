@@ -1,6 +1,6 @@
 console.log("Thank you Mike Foster and Eric Huntley from http://duspviz.mit.edu/d3-workshop/transitions-animation/ for the line animination stuff");
 
-let margin = {"top":10,"left":20,"right":10,"bottom":4};
+let margin = {"top":10,"left":50,"right":10,"bottom":4};
 let width = 870;
 let height = 300;
 
@@ -22,7 +22,7 @@ let chart = d3.select("#chart").append("svg")
 let chart1 = d3.select("#chart1").append("svg")
     .attr("width", width+margin.left + margin.right)
     .attr("height",height+margin.top + margin.bottom)
-    .append("g").attr("class", "container")
+    .append("g").attr("class", "container1")
     .attr("transform", "translate("+ margin.left +","+ margin.top +")");
 
 var x = d3.scaleBand()
@@ -30,7 +30,7 @@ var x = d3.scaleBand()
     .paddingInner(0.05)
 
 var y = d3.scaleLinear()
-    .range([height, 0]);
+    .range([height, 0])
 
 let x1 = d3.scaleBand()
     .range([0, width])
@@ -70,6 +70,15 @@ let createBarGraph0 = function(data){
     chart.append("g")
 	.attr("class", "yaxis")
 	.call(yAxis)
+
+    chart.append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 0 - margin.left)
+      .attr("x",0 - (height / 2))
+      .attr("dy", "1em")
+      .style("text-anchor", "middle")
+      .text("Percent Above Average Tempurature");     
+    
     chart.selectAll(".bar")
 	.data(data)
 	.enter()
@@ -109,7 +118,14 @@ let createBarGraph1 = function(data){
 	.attr("class", "yaxis1")
 	.call(yAxis1)
     
-
+   chart1.append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 0 - margin.left)
+      .attr("x",0 - (height / 2))
+      .attr("dy", "1em")
+      .style("text-anchor", "middle")
+      .text("Percent Below Average Tempurature");     
+    
     chart1.selectAll(".bar")
 	.data(data)
 	.enter()

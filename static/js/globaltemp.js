@@ -14,7 +14,7 @@ d3.select("#wait")
     .style("visibility","hidden")
 
 //sets margins/dimensions
-let margin = {"top":10,"left":40,"right":10,"bottom":4};
+let margin = {"top":10,"left":50,"right":10,"bottom":30};
 let width = 770;
 let height = 300;
 
@@ -68,9 +68,22 @@ let createBarGraph = function(data){
     
     chart.append("g")
 	.attr("class", "xaxis")
-    
-    console.log(x.bandwidth())
-    
+
+    chart.append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 0 - margin.left)
+      .attr("x",0 - (height / 2))
+      .attr("dy", "1em")
+      .style("text-anchor", "middle")
+      .text("Degrees Celcius");     
+
+    chart.append("text")             
+	.attr("transform",
+              "translate(" + (width/2) + " ," + 
+                           (height + margin.top + 10) + ")")
+	.style("text-anchor", "middle")
+	.text("Year (from 1880 to 2019)");
+        
     chart.selectAll(".bar")
 	.data(data)
 	.enter()
