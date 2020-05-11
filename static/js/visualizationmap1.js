@@ -106,7 +106,7 @@
         .duration(1000)
         .attr("fill", "orange")
         .attr("stroke", "red")
-        .attr("r", 5)
+        .attr("r", 3)
         .attr("cx", function(d) {
           var coords =  projection( [d.longitude, d.latitude] )
           // console.log(d)
@@ -167,7 +167,7 @@
           .duration(1000)
           .attr("fill", "blue")
           .attr("stroke", "black")
-          .attr("r", 5)
+          .attr("r", 4)
           .attr("cx", function(d) {
             var coords =  projection( [d.LONGITUDE, d.LATITUDE] );
             if(coords){
@@ -193,6 +193,7 @@
     // Use D3 to select element, change color and size
     // Specify where to put label of text
     //console.log(d);
+    d3.select(this).classed("selected", true)
     var x = projection( [d.LONGITUDE, d.LATITUDE] )[0];
     var y = projection( [d.LONGITUDE, d.LATITUDE] )[1];
     //console.log(x)
@@ -209,7 +210,7 @@
   }
 
   function handleMouseOut(d, i) {
-
+    d3.select(this).classed("selected", false)
     // Select text by id and then remove
     var x = projection( [d.LONGITUDE, d.LATITUDE] )[0];
     var y = projection( [d.LONGITUDE, d.LATITUDE] )[1];
