@@ -1,51 +1,51 @@
 April 28, 2020
-- ohC: updated README.md
-- chowdhuryB: pushed designdoc
+- connorO: updated README.md
+- birajC: pushed designdoc
 May 1st, 2020
-18:48 -- chowdhuryB: added basic templates, set up js folder/files, added US extreme tempuratues csv from https://www.climate.gov/maps-data/datasets/formats/csv. Started on extracting data and creating graph.
-23:21 --chowdhuryB :worked on some d3, kinda figured out the promise object.
+18:48 -- birajC: added basic templates, set up js folder/files, added US extreme tempuratues csv from https://www.climate.gov/maps-data/datasets/formats/csv. Started on extracting data and creating graph.
+23:21 --birajC :worked on some d3, kinda figured out the promise object.
 May 5th, 2020
-18:14 -- chowdhuryB: got a static bar chart working(progress though)!
-22:40 -- ohC: found a video tutorial for topojson and will use it as basis for map
+18:14 -- birajC: got a static bar chart working(progress though)!
+22:40 -- connorO: found a video tutorial for topojson and will use it as basis for map
 May 6th, 2020
-23:31 -- ohC: got it so the map is on the verge of displaying: working on how to translate the us.json file using d3v5 as the methods learned from a video is using d3v4
+23:31 -- connorO: got it so the map is on the verge of displaying: working on how to translate the us.json file using d3v5 as the methods learned from a video is using d3v4
 May 7th, 2020
-00:34 -- chowdhuryB: labels on chart, created homepage, working on transitions and animations.
+00:34 -- birajC: labels on chart, created homepage, working on transitions and animations.
 
-02:34 -- chowdhuryB: got more data involved in that one chart, started working on animating a line drawing a path on that one chart.
+02:34 -- birajC: got more data involved in that one chart, started working on animating a line drawing a path on that one chart.
 
-14:34 -- chowdhuryB: got colors on that one graph, added a tooltip to help the reader understand what exactly is going on, started animation stuff.
+14:34 -- birajC: got colors on that one graph, added a tooltip to help the reader understand what exactly is going on, started animation stuff.
 
-22:17 -- ohC: got the map working and will be displaying the data soon
+22:17 -- connorO: got the map working and will be displaying the data soon
 
 May 8th 2020
 
-13:20 -- tanM: finished initializing datasets. cleaned up csv files
+13:20 -- manfredT: finished initializing datasets. cleaned up csv files
 
-14:52 -- chowdhuryB: got line animation working, starting on displaying tempurature anomaly data.
+14:52 -- birajC: got line animation working, starting on displaying tempurature anomaly data.
 
-15:49 -- chowdhuryB: worked on some quick frontend stuff, added global temp data.
+15:49 -- birajC: worked on some quick frontend stuff, added global temp data.
 
-21:15 -- chowdhuryB: got graph working for global temp data, color scale.
+21:15 -- birajC: got graph working for global temp data, color scale.
 
-22:45 -- ohC: map is displaying actually successfully
+22:45 -- connorO: map is displaying actually successfully
 
 May 9th 2020
-2:19 -- chowdhuryB: added some buttons, line anim for global temp, created moreGlobal route.
+2:19 -- birajC: added some buttons, line anim for global temp, created moreGlobal route.
 
-3:00 -- chowdhuryB: Added data citation for global temp data.
+3:00 -- birajC: Added data citation for global temp data.
 
-20:00 -- chowdhuryB: Got historial temp data to js.
+20:00 -- birajC: Got historial temp data to js.
 
-21:19 -- tanM: added help page using representative api. working on helper methods for temperatures
+21:19 -- manfredT: added help page using representative api. working on helper methods for temperatures
 
-23:04 -- chowdhuryB: Got historial temp data animations working.
+23:04 -- birajC: Got historial temp data animations working.
 
-23:05 -- ohC: finished the main portion of the map
+23:05 -- connorO: finished the main portion of the map
 
 
 May 10th 2020
 
-17:18 -- chowdhuryB: Added data will start working on the front end stuff.
+17:18 -- birajC: Added data will start working on the front end stuff.
 
-20:59 -- ohC: finished the help page and completed the popovers as well as limiting the factories and making the transitions work
+20:59 -- connorO: finished the help page and completed the popovers as well as limiting the factories and making the transitions work
