@@ -19,10 +19,10 @@ Manfred Tan
 
 ## Description
 - This is a project based on relating average temperature per state data and number of factories using combustion energy data to the number of wildfires in certain areas
-- It will represented by a map of the USA and a pie chart
+- It will represented by a map of the USA or various bar charts
 - For the USA Map, each state will show:
-  * the number of wildfires during the selected month and year in each state
-  * the number of factories using combustion energy during the selected month and year in each state
+  * the number of wildfires during the selected date in each state
+  * the number of factories using combustion energy during the selected date in each state
 - For the tempurature datasets:
   * We will implement both bar graphs and line charts to display the change in tempuratures.
 
