@@ -1,19 +1,26 @@
 {% extends "base.html"%}
 {%block body%}
-<h1 id="headline">lets see</h1>
-<br>
-<h5>
-  Because of the fact that records of the Earth's global climate began being recorded in <br>
-  1880, we don't have any completely accurate information of the flucations in our climate. <br>
-  However, some very smart palentologists and geologists (see below) <br>
-  have approximated this data using their sophisticated geology technologies<br>
-</h5>
-<div id="chart"></div>
-<button id="start" class="btn btn-success">Start</button>
-<button id="stop" class="btn btn-danger">Stop</button>
-<br>
-<br>
-<div>
+<div class="container-fluid bg-primary p-2">
+  <h1 id="headline">lets see</h1>
+</div>
+<div class="container-fluid bg-info p-2">
+  <h5>
+    Because of the fact that records of the Earth's global climate began being recorded in <br>
+    1880, we don't have any completely accurate information of the flucations in our climate. <br>
+    However, some very smart palentologists and geologists (see below) <br>
+    have approximated this data using their sophisticated geology technologies<br>
+  </h5>
+</div>
+<div class="container-fluid bg-secondary p-2">
+  <div class="container bg-white p-2">
+    <div id="chart"></div>
+  </div>
+</div>
+<div class="container-fluid bg-primary p-2">
+  <button id="start" class="btn btn-success">Start</button>
+  <button id="stop" class="btn btn-danger">Stop</button>
+</div>
+<div class="container bg-light m-3 p-2 rounded">
   <span>
     <p id="moberg"> Data For Blue Line:<br>
       Moberg, A., et al. 2005.<br>
