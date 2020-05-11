@@ -1,5 +1,4 @@
-# proj4
-## Project WildFire
+# Project WildFire by peterPickledPeppers
 
 ### ROSTER
 Alex Olteanu (PM)
