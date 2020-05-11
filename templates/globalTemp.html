@@ -1,17 +1,23 @@
 {% extends "base.html"%}
 {%block body%}
-<h1 id="headline">lets see</h1>
-<div id="chart"></div>
-<button id="start" class="btn btn-light" type="button">Start</button>
-<button id="stop" class="btn btn-dark" type="button">Stop</button>
-<br>
-<br>
-<div id="wait">
-  <button id="more" class="btn btn-primary" type="button">But wait...</button>
+<div class="container-fluid bg-primary p-2">
+  <h1 id="headline">lets see</h1>
 </div>
-<br>
-<br>
-<div id="message"></div>
+<div class="container-fluid bg-secondary p-2">
+  <div class="container m-3 p-2 rounded bg-white">
+    <div id="chart"></div>
+  </div>
+  <button id="start" class="btn btn-success" type="button">Start</button>
+  <button id="stop" class="btn btn-danger" type="button">Stop</button>
+</div>
+<div class="container-fluid bg-white p-2">
+  <div id="wait">
+    <button id="more" class="btn btn-primary" type="button">But wait...</button>
+  </div>
+</div>
+<div class="container-fluid bg-primary p-2">
+  <div id="message"></div>
+</div>
 {%endblock%}
 
 {%block script%}

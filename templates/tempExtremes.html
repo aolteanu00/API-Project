@@ -1,11 +1,20 @@
 {% extends "base.html"%}
 
 {% block body%}
-<h1 id ="headline"> works </h1>
-<div id="chart"></div>
-<div id="chart1"></div>
-<button id="start" type="button" class="btn btn-dark">Wow What nice animation yall got going here</button>
-<button id="stop" type="button" class="btn btn-dark">abort</button>
+<div class="container-fluid bg-primary p-2">
+  <h1 id ="headline"> works </h1>
+</div>
+<div class="container-fluid bg-secondary p-2">
+  <div class="container bg-white p-2 rounded">
+    <div id="chart"></div>
+    <div id="chart1"></div>
+  </div>
+</div>
+<div class="container-fluid bg-info p-2">
+  <button id="start" type="button" class="btn btn-success">Wow What nice animation yall got going here</button>
+  <button id="stop" type="button" class="btn btn-danger">abort</button>
+</div>
+
 
 {%endblock%}
 
