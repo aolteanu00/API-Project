@@ -19,15 +19,12 @@ Manfred Tan
 
 ## Description
 - This is a project based on relating average temperature per state data and number of factories using combustion energy data to the number of wildfires in certain areas
-- It will represented by a map of the USA and a pie chart
+- It will represented by a map of the USA or various bar charts
 - For the USA Map, each state will show:
-  * the number of wildfires during the selected month and year in each state
-  * the average temperature in all states during the selected month and year
-  * the number of factories using combustion energy during the selected month and year in each state
-- For the Pie chart:
-  * it will first show the percentage of states with wildfires during the selected month and year
-  * then it will show the percentage of those states with wildfires that had an average temperature above 80
-  * then it will show the percentage of those states with wildfires that had factories using combustion energy
+  * the number of wildfires during the selected date in each state
+  * the number of factories using combustion energy during the selected date in each state
+- For the tempurature datasets:
+  * We will implement both bar graphs and line charts to display the change in tempuratures.
 
 ## Datasets and APIs
 Factories Dataset: https://data.world/us-doe-gov/19c607fa-1687-4bc4-a6dd-74b88b849644 <br />
@@ -44,11 +41,17 @@ Download the repo by cloning it
 ```
 git clone https://github.com/aolteanu00/proj4.git
 ```
+Create a virtual environment and activate it
+```
+python3 -m venv tehFort
+. tehFort/bin/activate
+```
 
 Enter the folder and download the requirements
 ```
 cd proj4
 pip install -r requirements.txt
+cd app
 ```
 
 Run the code
