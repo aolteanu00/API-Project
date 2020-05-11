@@ -1,6 +1,6 @@
 
 //sets margins/dimensions
-let margin = {"top":10,"left":40,"right":10,"bottom":4};
+let margin = {"top":10,"left":50,"right":10,"bottom":30};
 let width = 770;
 let height = 300;
 
@@ -26,7 +26,6 @@ let chart = d3.select("#chart").append("svg")
     .append("g").attr("class", "container")
     .attr("transform", "translate("+ margin.left +","+ margin.top +")");
 
-
 let x = d3.scaleBand()
     .domain(mobergData.map(d => d[0]))
     .range([0, width])
@@ -45,6 +44,21 @@ chart.append("g")
     
 chart.append("g")
     .attr("class", "xaxis")
+
+chart.append("text")
+    .attr("transform", "rotate(-90)")
+    .attr("y", 0 - margin.left)
+    .attr("x",0 - (height / 2))
+    .attr("dy", "1em")
+    .style("text-anchor", "middle")
+    .text("Degrees Celcius");     
+
+chart.append("text")             
+    .attr("transform",
+          "translate(" + (width/2) + " ," + 
+          (height + margin.top + 10) + ")")
+    .style("text-anchor", "middle")
+    .text("Year (from 0 AD to 1998)");
 
 
 let drawLine = function(data,color,widthStart,widthEnd,time){
@@ -77,7 +91,7 @@ let drawLine = function(data,color,widthStart,widthEnd,time){
 	.transition() 
 	.duration(time) 
 	.ease(d3.easeLinear) 
-	.attr("stroke-dashoffset", 0);
+	.attr("stroke-dashoffset", 0)
 }
 
 let animStarted = false;
